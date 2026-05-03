@@ -9,7 +9,8 @@ We represent founders, boards, and institutional investors through the full life
 
 **Areas of focus**
 
-- Mergers, acquisitions, and divestitures ($10M–$2B)
+- Mergers, acquisitions, and divestitures ($100M–$2B)
+- Wealth Structuring
 - Venture financings and growth equity
 - Corporate governance and board advisory
 - Commercial contracts and strategic alliances
