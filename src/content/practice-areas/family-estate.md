@@ -1,16 +1,15 @@
 ---
-title: "Family & Estate"
+title: "Private Client & Family Office Advisory"
 icon: "tree"
-summary: "Discreet counsel for families navigating succession, estate planning, trusts, and personal disputes."
+summary: "Discreet, trust-based counsel for UHNWIs and multigenerational wealth — succession, governance, and legacy planning that safeguards long-term interests."
 order: 3
 ---
 
-Our private client group serves multi-generational families, family offices, and high-net-worth individuals. Every plan is bespoke, every conversation confidential, and every recommendation made with the long arc of a family's legacy in mind.
+We advise UHNWIs, family principals, and family offices on the structures and decisions that shape multigenerational wealth — succession, governance, and long-term legacy planning. Every engagement is grounded in discretion, trust-based relationships, and a clear focus on safeguarding the family's long-term interests.
 
-**Areas of focus**
+**Our service areas**
 
-- Estate and gift planning
-- Domestic and offshore trusts
-- Family office structuring
-- Pre- and post-nuptial agreements
-- Sensitive family disputes and trustee removals
+- Foundations
+- Family Offices
+- Private Wealth
+- Trusts

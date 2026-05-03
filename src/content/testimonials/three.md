@@ -1,7 +1,7 @@
 ---
-author: "General Counsel"
-role: "European real estate fund"
+author: "Chambers UK Bar"
+role: "On Satinder Hunjan KC"
 order: 3
 ---
 
-Discreet, decisive, and exceptionally well-prepared. They closed our $400M U.S. portfolio acquisition in nine weeks — and made it look easy.
+Satinder is responsive and has exceptional strategy on cases. He has an excellent knowledge of medical matters, which greatly helps the management of crucial expert evidence in complex cases.

@@ -1,7 +1,7 @@
 ---
-author: "Family Principal"
-role: "Third-generation private family"
+author: "Chambers UK Bar"
+role: "On Satinder Hunjan KC"
 order: 2
 ---
 
-When my mother passed, we needed counsel that understood both the legal complexity and the family dynamics. ALSA Law handled both with grace.
+There are no words to describe Satinder's skillset. He is a superb KC and always delivers.

@@ -1,7 +1,7 @@
 ---
-author: "Chief Executive Officer"
-role: "NYSE-listed industrial company"
+author: "Legal 500"
+role: "On Satinder Hunjan KC"
 order: 1
 ---
 
-We have worked with ALSA Law's senior counsel on every consequential matter we've faced. Their judgment is unmatched, and they tell us things we don't always want to hear — which is exactly why we keep them close.
+His knowledge and experience in the field of clinical negligence is outstanding. His negotiation skills are unrivalled. An excellent trial lawyer who is great to work with.

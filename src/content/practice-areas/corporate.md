@@ -1,17 +1,15 @@
 ---
-title: "Corporate & Business Law"
+title: "Transactional & M&A Advisory"
 icon: "scales"
-summary: "Senior counsel on mergers, acquisitions, joint ventures, governance, and complex commercial transactions."
+summary: "Strategic structuring, cross-border transactions, and governance frameworks built for long-term business planning."
 order: 1
 ---
 
-We represent founders, boards, and institutional investors through the full lifecycle of the enterprise — from formation and capital raises to acquisitions, restructurings, and exits. Our partners bring decades of in-house and Big Law experience to every matter, with the judgment to know when to negotiate, when to litigate, and when to walk away.
+We advise founders, boards, and institutional clients across the full lifecycle of corporate and commercial transactions — from strategic structuring and regulatory compliance through cross-border deals and the commercial agreements that follow. Our work is grounded in clear governance frameworks and a long-term view of the business.
 
-**Areas of focus**
+**Our service areas**
 
-- Mergers, acquisitions, and divestitures ($100M–$2B)
-- Wealth Structuring
-- Venture financings and growth equity
-- Corporate governance and board advisory
-- Commercial contracts and strategic alliances
-- Regulatory compliance and internal investigations
+- Mergers & Acquisitions
+- Commercial Transactions
+- Incorporation
+- Corporate Structure

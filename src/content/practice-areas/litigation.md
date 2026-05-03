@@ -1,16 +1,14 @@
 ---
-title: "Litigation & Disputes"
+title: "Dispute Resolution & Arbitration"
 icon: "gavel"
-summary: "Trial-tested representation in commercial litigation, arbitration, and high-stakes disputes."
+summary: "High-stakes commercial and contractual disputes — local and international — across UAE mainland courts, Free Zones, and global arbitration."
 order: 2
 ---
 
-When negotiation fails, our trial team takes over. We have argued before federal and state courts in fifteen jurisdictions and led arbitrations under ICC, AAA, JAMS, and LCIA rules. Clients hire us when the dispute is consequential and the outcome must be right.
+We act in high-stakes civil, commercial, and contractual disputes across the UAE mainland and Free Zone courts, with substantial international arbitration experience. Our team brings expertise across both civil-law and common-law systems, and routinely advises on mediation, conciliation, and alternative dispute resolution where settlement is the better path to value.
 
-**Areas of focus**
+**Our service areas**
 
-- Commercial and contract disputes
-- Shareholder and partnership litigation
-- International arbitration
-- White-collar defense and government investigations
-- Appellate practice
+- Litigation
+- Arbitration
+- Alternative Dispute Resolution (ADR)

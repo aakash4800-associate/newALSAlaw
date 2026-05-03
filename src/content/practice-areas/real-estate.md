@@ -1,17 +1,15 @@
 ---
-title: "Real Estate"
+title: "Real Estate & Investment Structuring"
 icon: "building"
-summary: "Counsel on acquisitions, development, financing, and complex commercial leasing across the U.S. and Europe."
+summary: "Structuring acquisitions, disposals, and investments — with developer advisory grounded in a strong connection to Abu Dhabi's real estate ecosystem."
 order: 4
 ---
 
-We close deals quickly, anticipate friction, and structure investments to weather cycles. Our real estate practice supports owner-operators, developers, REITs, and institutional capital on assignments from single-asset acquisitions to portfolio-wide repositionings.
+We structure acquisitions, disposals, and investments for owners, developers, and institutional capital, and advise developers across regulatory and compliance matters. Our practice draws on a strong connection to Abu Dhabi's real estate ecosystem, giving clients the local depth needed to move quickly and the discipline to structure for the long term.
 
-**Areas of focus**
+**Our service areas**
 
-- Acquisitions, dispositions
-- Ground-up development and construction
-- Senior, mezzanine, and joint-venture financing
-- Commercial leasing — office, retail, industrial
-- Land use, zoning, and entitlement
-- Real estate dispute resolution
+- Construction
+- Real Estate
+- Infrastructure
+- Lease
