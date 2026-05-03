@@ -9,7 +9,7 @@ We close deals quickly, anticipate friction, and structure investments to weathe
 
 **Areas of focus**
 
-- Acquisitions, dispositions, and 1031 exchanges
+- Acquisitions, dispositions
 - Ground-up development and construction
 - Senior, mezzanine, and joint-venture financing
 - Commercial leasing — office, retail, industrial
