@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sterling-partners.example.com/sitemap-index.xml
+Sitemap: https://alsa-law.example.com/sitemap-index.xml

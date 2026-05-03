@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://sterling-partners.example.com',
+  site: 'https://alsa-law.example.com',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

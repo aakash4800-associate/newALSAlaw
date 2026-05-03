@@ -1,4 +1,4 @@
-# Sterling & Partners — Astro Landing Page
+# ALSA Law — Astro Landing Page
 
 A navy-and-gold legal-firm landing page built with **Astro 5**, **Tailwind 4**, and **Markdown content collections**, ready to deploy on **Netlify** via **GitHub**.
 
@@ -47,14 +47,14 @@ To produce the production build: `npm run build` (output goes to `dist/`).
 
 ### 2. Push to GitHub (10 minutes)
 
-1. Go to <https://github.com/new> and create a new **private** (or public) repo named e.g. `sterling-partners-site`. **Do not** initialize it with a README, license, or .gitignore — this folder already has them.
+1. Go to <https://github.com/new> and create a new **private** (or public) repo named e.g. `alsa-law-site`. **Do not** initialize it with a README, license, or .gitignore — this folder already has them.
 2. In the terminal, from inside this folder:
    ```bash
    git init
    git add .
-   git commit -m "Initial commit: Sterling & Partners landing page"
+   git commit -m "Initial commit: ALSA Law landing page"
    git branch -M main
-   git remote add origin https://github.com/<your-username>/sterling-partners-site.git
+   git remote add origin https://github.com/<your-username>/alsa-law-site.git
    git push -u origin main
    ```
 3. Refresh your repo page on GitHub — every file should now be there.
@@ -63,14 +63,14 @@ To produce the production build: `npm run build` (output goes to `dist/`).
 
 1. Sign in at <https://app.netlify.com>.
 2. Click **Add new site → Import an existing project → GitHub**.
-3. Authorize Netlify to access your GitHub account if prompted, then pick `sterling-partners-site`.
+3. Authorize Netlify to access your GitHub account if prompted, then pick `alsa-law-site`.
 4. Netlify will auto-detect the `netlify.toml` in this repo. The values should already be filled in:
    - **Build command:** `npm run build`
    - **Publish directory:** `dist`
    - **Node version:** `20`
 5. Click **Deploy site**. The first build takes ~60 seconds. When it's green, click **Open production deploy** to see it live.
 
-You'll get a free `*.netlify.app` URL immediately. To use a custom domain (e.g., `sterling-partners.com`):
+You'll get a free `*.netlify.app` URL immediately. To use a custom domain (e.g., `alsa-law.com`):
 
 - Netlify dashboard → **Domain settings → Add a domain you already own** → follow the DNS instructions.
 - HTTPS is provisioned automatically by Let's Encrypt.
@@ -111,4 +111,4 @@ To get email notifications: Netlify dashboard → **Forms → Settings → Form 
 
 ## Replacing the placeholder firm
 
-Search-and-replace `Sterling & Partners` and `sterling-partners.example` across the project to drop in your real firm name and domain.
+Search-and-replace `ALSA Law` and `alsa-law.example` across the project to drop in your real firm name and domain.
