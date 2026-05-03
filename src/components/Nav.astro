@@ -11,7 +11,10 @@ const links = [
   <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3 group">
       <span class="inline-flex items-center justify-center w-10 h-10 rounded-sm border border-gold-400/70 text-gold-300 font-serif text-xl">A</span>
-      <span class="text-white font-serif text-xl tracking-wide">ALSA <span class="text-gold-300">Law</span></span>
+      <span class="flex flex-col leading-tight">
+        <span class="text-white font-serif text-xl tracking-wide">ALSA <span class="text-gold-300">Law</span></span>
+        <span class="hidden sm:block text-[10px] tracking-[0.25em] uppercase text-gold-300/80 mt-0.5">Law · Leadership · Longevity</span>
+      </span>
     </a>
     <nav class="hidden lg:flex items-center gap-8 text-sm text-white/85">
       {links.map((l) => (

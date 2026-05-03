@@ -1,6 +1,6 @@
 ---
 name: "Satinder Hunjan KC"
-title: "Founder and Chairman"
+title: "Co-Founder and Chairman"
 practice: "Catastrophic Injury · Clinical Negligence · Commercial Disputes"
 initials: "SH"
 order: 1

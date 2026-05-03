@@ -19,7 +19,7 @@ const attorneys = defineCollection({
     practice: z.string(),
     initials: z.string(),
     order: z.number(),
-    image: z.string().url().optional(),
+    image: z.string().optional(),
   }),
 });
 
