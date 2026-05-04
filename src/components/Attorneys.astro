@@ -47,6 +47,9 @@ const attorneys = (await getCollection("attorneys")).sort(
             <h3 class="font-serif text-xl text-white mb-1">{a.data.name}</h3>
             <div class="text-gold-300 text-sm mb-2">{a.data.title}</div>
             <div class="text-white/60 text-xs tracking-wider uppercase">{a.data.practice}</div>
+            {a.data.tagline && (
+              <div class="mt-3 pt-3 border-t border-white/10 text-white/70 text-xs italic leading-snug">{a.data.tagline}</div>
+            )}
           </div>
         </article>
       ))}

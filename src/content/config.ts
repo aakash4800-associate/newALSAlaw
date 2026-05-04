@@ -20,6 +20,7 @@ const attorneys = defineCollection({
     initials: z.string(),
     order: z.number(),
     image: z.string().optional(),
+    tagline: z.string().optional(),
   }),
 });
 
