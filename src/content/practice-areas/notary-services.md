@@ -12,4 +12,4 @@ We provide reliable notary services for corporate, commercial, and personal docu
 - Corporate and commercial documentation
 - Personal and family instruments
 - Verification and attestation
-- Sensitive and confidential matters
+- Sensitive matters handled with discretion
