@@ -59,7 +59,7 @@ const serviceTags: Record<string, string[]> = {
       const desc = shortDesc[area.data.title] ?? area.data.summary;
       const tags = serviceTags[area.data.title] ?? [];
       return (
-        <div class="border-t border-navy-100 group hover:bg-white/60 transition-colors duration-300">
+        <div class={`border-t border-navy-200 group transition-colors duration-300 ${i % 2 === 0 ? 'bg-white hover:bg-white' : 'bg-cream hover:bg-cream'}`}>
           <div class={`max-w-7xl mx-auto px-6 lg:px-10 py-10 lg:py-14 flex gap-6 lg:gap-10 items-center flex-col md:flex-row ${isRight ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
 
             {/* ── Giant decorative number, outer edge ── */}
@@ -110,7 +110,7 @@ const serviceTags: Record<string, string[]> = {
         </div>
       );
     })}
-    <div class="border-t border-navy-100"></div>
+    <div class="border-t border-navy-200"></div>
   </div>
 
   <div class="relative z-10 pb-24 lg:pb-32"></div>
