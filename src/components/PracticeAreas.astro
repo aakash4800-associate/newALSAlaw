@@ -15,7 +15,6 @@ const icons: Record<string, string> = {
   trending: `<path d="M22 7l-8.5 8.5-5-5L2 17M16 7h6v6" />`,
 };
 
-// Punchy one-liners — no prose
 const shortDesc: Record<string, string> = {
   "Transactional & M&A Advisory":           "Full-cycle M&A and commercial advisory, from strategic structuring to closing.",
   "Dispute Resolution & Arbitration":        "High-stakes disputes across UAE courts, Free Zones, and international arbitration.",
@@ -52,66 +51,50 @@ const serviceTags: Record<string, string[]> = {
     </p>
   </div>
 
-  <!-- ░░ Alternating editorial rows ░░ -->
-  <div class="relative z-10">
-    {areas.map((area, i) => {
-      const isRight = i % 2 === 1;
-      const desc = shortDesc[area.data.title] ?? area.data.summary;
-      const tags = serviceTags[area.data.title] ?? [];
-      return (
-        <div class={`border-t border-navy-200 group transition-colors duration-300 ${i % 2 === 0 ? 'bg-white hover:bg-white' : 'bg-cream hover:bg-cream'}`}>
-          <div class={`max-w-7xl mx-auto px-6 lg:px-10 py-10 lg:py-14 flex gap-6 lg:gap-10 items-center flex-col md:flex-row ${isRight ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+  <!-- ░░ Card grid ░░ -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-24 lg:pb-32">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px">
+      {areas.map((area) => {
+        const desc = shortDesc[area.data.title] ?? area.data.summary;
+        const tags = serviceTags[area.data.title] ?? [];
+        return (
+          <div class="bg-cream group hover:bg-navy-900 transition-colors duration-500 p-8 lg:p-10 flex flex-col gap-5 relative overflow-hidden cursor-default">
 
-            {/* ── Giant decorative number, outer edge ── */}
-            <div class="hidden xl:block flex-shrink-0 w-24 text-center">
-              <span class="font-serif text-[5.5rem] leading-none select-none text-navy-900/[0.06] group-hover:text-navy-900/[0.1] transition-colors tabular-nums">
-                {String(area.data.order).padStart(2, "0")}
-              </span>
+            {/* Decorative number */}
+            <span class="absolute top-3 right-5 font-serif text-[5rem] leading-none select-none text-navy-900/[0.05] group-hover:text-white/[0.05] transition-colors">
+              {String(area.data.order).padStart(2, "0")}
+            </span>
+
+            {/* Icon */}
+            <div class="w-10 h-10 border border-gold-500/40 text-gold-500 flex items-center justify-center group-hover:border-gold-300/60 group-hover:text-gold-300 transition-colors flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[area.data.icon] ?? icons.scales}></svg>
             </div>
 
-            {/* ── Icon + Title ── */}
-            <div class={`flex-shrink-0 w-full md:w-56 lg:w-64 ${isRight ? 'md:text-right' : 'md:text-left'}`}>
-              <div class={`w-10 h-10 flex items-center justify-center border border-gold-500/40 text-gold-500 mb-5 group-hover:border-gold-500 group-hover:bg-gold-500/10 transition-colors ${isRight ? 'md:ml-auto' : ''}`}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={icons[area.data.icon] ?? icons.scales}></svg>
-              </div>
-              <h3 class="font-serif text-[1.55rem] lg:text-[1.75rem] text-navy-900 leading-snug">{area.data.title}</h3>
-              <p class="hidden md:block text-[10px] tracking-[0.22em] uppercase text-gold-500/50 mt-2">
-                {String(area.data.order).padStart(2, "0")} / 07
-              </p>
+            {/* Title */}
+            <h3 class="font-serif text-xl lg:text-[1.4rem] text-navy-900 group-hover:text-white leading-snug transition-colors">{area.data.title}</h3>
+
+            {/* Description */}
+            <p class="text-navy-600 group-hover:text-white/60 text-sm leading-relaxed flex-1 transition-colors">{desc}</p>
+
+            {/* Tags */}
+            <div class="flex flex-wrap gap-1.5">
+              {tags.map(tag => (
+                <span class="text-[9px] tracking-[0.15em] uppercase border border-gold-500/30 text-gold-600/70 group-hover:border-gold-300/40 group-hover:text-gold-300/70 px-2.5 py-1 transition-colors">{tag}</span>
+              ))}
             </div>
 
-            {/* ── Vertical rule ── */}
-            <div class="hidden lg:block flex-shrink-0 w-px self-stretch min-h-[4rem] bg-navy-200"></div>
-
-            {/* ── Description + service tags ── */}
-            <div class="flex-1 min-w-0">
-              <p class="text-navy-700 text-base lg:text-[1.05rem] leading-relaxed mb-5">{desc}</p>
-              <div class="flex flex-wrap gap-2">
-                {tags.map(tag => (
-                  <span class="text-[10px] tracking-[0.18em] uppercase border border-gold-500/30 text-gold-600/70 px-3 py-1.5 group-hover:border-gold-500/60 group-hover:text-gold-600 transition-colors">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* ── CTA ── */}
-            <div class="flex-shrink-0 self-end md:self-center pb-1 md:pb-0">
-              <a
-                href="#contact"
-                class="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase font-medium text-navy-700 hover:text-gold-600 border-b border-navy-300 hover:border-gold-500 pb-1 transition-colors whitespace-nowrap"
-              >
-                Discuss
-                <span aria-hidden="true" class="text-sm">→</span>
-              </a>
-            </div>
+            {/* CTA */}
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-1.5 text-[10px] tracking-[0.18em] uppercase font-medium text-navy-500 group-hover:text-gold-300 border-b border-navy-300/60 group-hover:border-gold-400/50 pb-0.5 transition-colors self-start mt-1"
+            >
+              Discuss <span aria-hidden="true">→</span>
+            </a>
 
           </div>
-        </div>
-      );
-    })}
-    <div class="border-t border-navy-200"></div>
+        );
+      })}
+    </div>
   </div>
 
-  <div class="relative z-10 pb-24 lg:pb-32"></div>
 </section>
