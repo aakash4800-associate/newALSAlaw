@@ -4,7 +4,7 @@ title: "Co-Founder and Managing Partner"
 practice: "Commercial Litigation · Wealth Management & Structuring · Dispute Resolution · Government Affairs"
 initials: "AA"
 order: 2
-image: "/attorneys/abdulla-aljefri.jpg"
+image: "/attorneys/abdulla-aljefri-removebg-preview.png"
 tagline: "Leading expert on Abu Dhabi government affairs and wealth management & structuring · 17 years in the Abu Dhabi Government"
 ---
 
