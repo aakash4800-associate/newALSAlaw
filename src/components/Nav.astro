@@ -1,10 +1,10 @@
 ---
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#attorneys", label: "Who We Are" },
-  { href: "#practice", label: "Practice Areas" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/who-we-are", label: "Who We Are" },
+  { href: "/practice-areas", label: "Practice Areas" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/contact", label: "Contact" },
 ];
 ---
 <header id="site-header" class="fixed top-0 left-0 right-0 z-30 transition-colors duration-300">
@@ -21,7 +21,7 @@ const links = [
         <a href={l.href} class="hover:text-gold-300 transition-colors">{l.label}</a>
       ))}
     </nav>
-    <a href="#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium border border-gold-400 text-gold-200 hover:bg-gold-400 hover:text-navy-900 transition-colors">
+    <a href="/contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium border border-gold-400 text-gold-200 hover:bg-gold-400 hover:text-navy-900 transition-colors">
       Schedule Consultation
       <span aria-hidden="true">→</span>
     </a>
@@ -35,7 +35,7 @@ const links = [
     {links.map((l) => (
       <a href={l.href} class="block py-2 text-white/90 hover:text-gold-300">{l.label}</a>
     ))}
-    <a href="#contact" class="mt-3 inline-block px-4 py-2 border border-gold-400 text-gold-200">Schedule Consultation</a>
+    <a href="/contact" class="mt-3 inline-block px-4 py-2 border border-gold-400 text-gold-200">Schedule Consultation</a>
   </div>
 </header>
 
