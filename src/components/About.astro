@@ -1,4 +1,8 @@
 ---
+interface Props {
+  hideHeader?: boolean;
+}
+const { hideHeader = false } = Astro.props;
 ---
 <section id="about" class="py-24 md:py-32 bg-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -42,15 +46,19 @@
 
     <!-- ░░ Right: text content ░░ -->
     <div class="lg:col-span-7 order-1 lg:order-2">
-      <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">About the Firm</p>
-      <h2 class="text-4xl md:text-5xl font-serif text-navy-900 leading-tight">
-        Senior attention.<br />
-        <span class="italic text-gold-600">Without exception.</span>
-      </h2>
-      <span class="gold-divider"></span>
-      <p class="text-navy-700 text-lg leading-relaxed mb-8">
-        A senior-counsel boutique with a presence in Abu Dhabi and London, founded by practitioners from the highest levels of the Bar and government. Our clients trust us with their most consequential decisions and we bring the full weight of our experience to each one.
-      </p>
+      {!hideHeader && (
+        <Fragment>
+          <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">About the Firm</p>
+          <h2 class="text-4xl md:text-5xl font-serif text-navy-900 leading-tight">
+            Senior attention.<br />
+            <span class="italic text-gold-600">Without exception.</span>
+          </h2>
+          <span class="gold-divider"></span>
+          <p class="text-navy-700 text-lg leading-relaxed mb-8">
+            A senior-counsel boutique with a presence in Abu Dhabi and London, founded by practitioners from the highest levels of the Bar and government. Our clients trust us with their most consequential decisions and we bring the full weight of our experience to each one.
+          </p>
+        </Fragment>
+      )}
       <div class="grid grid-cols-2 gap-6 max-w-lg">
         <div class="border-l-2 border-gold-400 pl-4">
           <div class="font-serif text-2xl text-navy-900">60+ Years</div>

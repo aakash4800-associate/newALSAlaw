@@ -11,16 +11,23 @@ const rendered = await Promise.all(
     return { ...entry, Content };
   })
 );
+
+interface Props {
+  hideHeader?: boolean;
+}
+const { hideHeader = false } = Astro.props;
 ---
 <section id="testimonials" class="py-24 md:py-32 bg-cream">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="max-w-3xl mb-16">
-      <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">What the directories say</p>
-      <h2 class="text-4xl md:text-5xl font-serif text-navy-900 leading-tight">
-        Independently ranked. Consistently recommended.
-      </h2>
-      <span class="gold-divider"></span>
-    </div>
+    {!hideHeader && (
+      <div class="max-w-3xl mb-16">
+        <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">What the directories say</p>
+        <h2 class="text-4xl md:text-5xl font-serif text-navy-900 leading-tight">
+          Independently ranked. Consistently recommended.
+        </h2>
+        <span class="gold-divider"></span>
+      </div>
+    )}
 
     <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
       {rendered.map((t) => (

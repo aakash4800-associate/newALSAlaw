@@ -1,4 +1,8 @@
 ---
+interface Props {
+  hideHeader?: boolean;
+}
+const { hideHeader = false } = Astro.props;
 ---
 <section id="contact" class="relative overflow-hidden text-white">
 
@@ -21,15 +25,19 @@
 
     <!-- Left: header + contact details -->
     <div class="lg:col-span-5">
-      <p class="text-gold-400 text-sm tracking-[0.25em] uppercase mb-4">Schedule a Consultation</p>
-      <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">
-        Let's start<br />
-        <span class="italic text-gold-300">a conversation.</span>
-      </h2>
-      <span class="gold-divider"></span>
-      <p class="text-white/65 text-lg leading-relaxed mb-10">
-        Tell us briefly about your matter. A member of our team will respond within one business day.
-      </p>
+      {!hideHeader && (
+        <Fragment>
+          <p class="text-gold-400 text-sm tracking-[0.25em] uppercase mb-4">Schedule a Consultation</p>
+          <h2 class="text-4xl md:text-5xl font-serif text-white leading-tight">
+            Let's start<br />
+            <span class="italic text-gold-300">a conversation.</span>
+          </h2>
+          <span class="gold-divider"></span>
+          <p class="text-white/65 text-lg leading-relaxed mb-10">
+            Tell us briefly about your matter. A member of our team will respond within one business day.
+          </p>
+        </Fragment>
+      )}
 
       <div class="space-y-6">
         <div class="flex items-start gap-4">

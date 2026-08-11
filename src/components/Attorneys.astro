@@ -1,6 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
+interface Props {
+  hideHeader?: boolean;
+}
+const { hideHeader = false } = Astro.props;
+
 const attorneys = (await getCollection("attorneys")).sort(
   (a, b) => a.data.order - b.data.order
 );
@@ -11,19 +16,21 @@ const attorneys = (await getCollection("attorneys")).sort(
   </div>
 
   <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
-      <div class="max-w-2xl">
-        <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-4">Our Founders</p>
-        <h2 class="text-4xl md:text-5xl font-serif leading-tight">
-          Senior counsel <em class="text-gold-300 not-italic font-serif">who lead</em> every matter.
-        </h2>
-        <span class="gold-divider"></span>
+    {!hideHeader && (
+      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+        <div class="max-w-2xl">
+          <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-4">Our Founders</p>
+          <h2 class="text-4xl md:text-5xl font-serif leading-tight">
+            Senior counsel <em class="text-gold-300 not-italic font-serif">who lead</em> every matter.
+          </h2>
+          <span class="gold-divider"></span>
+        </div>
+        <a href="/contact" class="inline-flex items-center gap-2 text-gold-300 hover:text-white transition-colors border-b border-gold-400/50 hover:border-white pb-1 self-start">
+          Meet the full team
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
-      <a href="/contact" class="inline-flex items-center gap-2 text-gold-300 hover:text-white transition-colors border-b border-gold-400/50 hover:border-white pb-1 self-start">
-        Meet the full team
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
+    )}
 
     <div class="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-2xl mx-auto">
       {attorneys.map((a) => (

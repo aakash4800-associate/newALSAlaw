@@ -1,6 +1,11 @@
 ---
 import { getCollection } from "astro:content";
 
+interface Props {
+  hideHeader?: boolean;
+}
+const { hideHeader = false } = Astro.props;
+
 const areas = (await getCollection("practiceAreas")).sort(
   (a, b) => a.data.order - b.data.order
 );
@@ -39,20 +44,22 @@ const serviceTags: Record<string, string[]> = {
 <section id="practice" class="relative bg-cream text-navy-900 overflow-hidden">
 
   <!-- ░░ Section header ░░ -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-16 lg:pb-20">
-    <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">Practice Areas</p>
-    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-navy-900 leading-[1.1]">
-      Where law meets<br />
-      <span class="italic text-gold-500">leadership.</span>
-    </h2>
-    <span class="gold-divider"></span>
-    <p class="text-navy-600 text-base max-w-sm leading-relaxed">
-      A focused suite of services, each led by senior counsel with the depth and judgment your matter demands.
-    </p>
-  </div>
+  {!hideHeader && (
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-16 lg:pb-20">
+      <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">Practice Areas</p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-navy-900 leading-[1.1]">
+        Where law meets<br />
+        <span class="italic text-gold-500">leadership.</span>
+      </h2>
+      <span class="gold-divider"></span>
+      <p class="text-navy-600 text-base max-w-sm leading-relaxed">
+        A focused suite of services, each led by senior counsel with the depth and judgment your matter demands.
+      </p>
+    </div>
+  )}
 
   <!-- ░░ Card grid ░░ -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-24 lg:pb-32">
+  <div class:list={["relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-24 lg:pb-32", { "pt-24": hideHeader }]}>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px">
       {areas.map((area) => {
         const desc = shortDesc[area.data.title] ?? area.data.summary;
