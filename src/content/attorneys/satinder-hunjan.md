@@ -4,7 +4,7 @@ title: "Co-Founder and Chairman"
 practice: "High-Value Claims · Commercial Litigation · Arbitration · Dispute Resolution"
 initials: "SH"
 order: 1
-image: "https://www.kingschambers.com/wp-content/uploads/2023/06/SatinderHunjanQC-removebg-preview.png"
+image: "/attorneys/satinder-hunjan.jpg"
 tagline: "King's Counsel · Deputy High Court Judge · 40+ years at the English Bar · Ranked Band 1, Chambers & Partners"
 ---
 
