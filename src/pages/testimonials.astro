@@ -1,7 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Testimonials from "../components/Testimonials.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="What the Directories Say — ALSA Law" description="Recognition and testimonials for ALSA Law from leading legal directories.">
+  <PageHeader
+    eyebrow="What the Directories Say"
+    title="Recognised by those who matter."
+    subtitle="Rankings, awards, and the words of clients and referring counsel who have worked with the firm."
+    image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80"
+    position="object-center"
+  />
   <Testimonials />
+  <PlaceholderSection
+    eyebrow="Recognition"
+    heading="Rankings & awards."
+    intro="[Placeholder] The firm's standings in legal directories and industry awards."
+    blocks={[
+      { title: "Directory Rankings", note: "[Placeholder] Chambers, Legal 500, and other directory listings with detail." },
+      { title: "Awards & Honours", note: "[Placeholder] Notable recognitions received by the firm and its lawyers." },
+      { title: "Individual Accolades", note: "[Placeholder] Personal rankings and commendations for named attorneys." },
+    ]}
+  />
+  <PlaceholderSection
+    dark
+    eyebrow="Client Voices"
+    heading="In their own words."
+    intro="[Placeholder] Extended client testimonials and case-outcome highlights."
+    blocks={[
+      { title: "Full Testimonials", note: "[Placeholder] Longer-form quotes from clients and referring counsel." },
+      { title: "Notable Outcomes", note: "[Placeholder] Results achieved on landmark matters." },
+      { title: "Client Sectors", note: "[Placeholder] The range of clients the firm has served." },
+    ]}
+  />
 </Layout>

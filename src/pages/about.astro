@@ -2,8 +2,38 @@
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import CityBanner from "../components/CityBanner.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="About the Firm — ALSA Law" description="A senior-counsel boutique with a presence in Abu Dhabi and London, founded by practitioners from the highest levels of the Bar and government.">
+  <PageHeader
+    eyebrow="About the Firm"
+    title="Senior attention. Without exception."
+    subtitle="A senior-counsel boutique with a presence in Abu Dhabi and London, built on decades of practice at the highest levels of the Bar and government."
+    image="/abu-dhabi.jpg"
+    position="object-center"
+  />
   <About />
   <CityBanner />
+  <PlaceholderSection
+    eyebrow="Our Story"
+    heading="How the firm came to be."
+    intro="[Placeholder] Full narrative history of ALSA Law — founding vision, the partners who started it, and the milestones that shaped the practice."
+    blocks={[
+      { title: "Founding & Vision", note: "[Placeholder] The story behind the firm's founding and the philosophy that drives it." },
+      { title: "Milestones", note: "[Placeholder] A timeline of key moments, landmark matters, and growth across Abu Dhabi and London." },
+      { title: "Our Values", note: "[Placeholder] The principles that define how the firm works with clients and one another." },
+    ]}
+  />
+  <PlaceholderSection
+    dark
+    eyebrow="Our Offices"
+    heading="Abu Dhabi & London."
+    intro="[Placeholder] Deeper detail on each office — presence, capabilities, and the regions served."
+    blocks={[
+      { title: "Abu Dhabi", note: "[Placeholder] Office overview, address, and the practice strengths based here." },
+      { title: "London", note: "[Placeholder] Office overview and the cross-border work coordinated from the UK." },
+      { title: "Global Reach", note: "[Placeholder] How the firm serves clients across jurisdictions." },
+    ]}
+  />
 </Layout>

@@ -1,7 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Attorneys from "../components/Attorneys.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="Who We Are — ALSA Law" description="Meet the senior counsel at ALSA Law — practitioners from the highest levels of the Bar and government.">
+  <PageHeader
+    eyebrow="Who We Are"
+    title="The people behind the practice."
+    subtitle="Practitioners drawn from the highest levels of the Bar and government, bringing the full weight of their experience to every matter."
+    image="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80"
+    position="object-center"
+  />
   <Attorneys />
+  <PlaceholderSection
+    eyebrow="The Team"
+    heading="More than the names on the door."
+    intro="[Placeholder] Extended profiles of the wider team — associates, counsel, and the people who support every matter."
+    blocks={[
+      { title: "Full Attorney Bios", note: "[Placeholder] Long-form biographies, credentials, and notable matters for each attorney." },
+      { title: "Associates & Counsel", note: "[Placeholder] The wider legal team and their areas of focus." },
+      { title: "How We Work", note: "[Placeholder] The firm's approach to staffing, collaboration, and client service." },
+    ]}
+  />
+  <PlaceholderSection
+    dark
+    eyebrow="Join Us"
+    heading="Careers at ALSA Law."
+    intro="[Placeholder] Recruitment section — who the firm looks for and current opportunities."
+    blocks={[
+      { title: "Life at the Firm", note: "[Placeholder] Culture, development, and what it's like to practice here." },
+      { title: "Open Positions", note: "[Placeholder] Current vacancies and how to apply." },
+      { title: "Trainee & Pupillage", note: "[Placeholder] Early-career pathways into the firm." },
+    ]}
+  />
 </Layout>

@@ -1,7 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Contact from "../components/Contact.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="Contact — ALSA Law" description="Schedule a consultation with ALSA Law. Senior counsel available in Abu Dhabi and London.">
+  <PageHeader
+    eyebrow="Schedule a Consultation"
+    title="Let's start a conversation."
+    subtitle="Tell us briefly about your matter. A member of our team will respond within one business day."
+    image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80"
+    position="object-center"
+  />
   <Contact />
+  <PlaceholderSection
+    eyebrow="Visit Us"
+    heading="Find our offices."
+    intro="[Placeholder] Location detail, maps, and directions for each office."
+    blocks={[
+      { title: "Abu Dhabi Office", note: "[Placeholder] Map, address, parking, and building access details." },
+      { title: "London Office", note: "[Placeholder] Map, address, and nearest transport links." },
+      { title: "Office Hours", note: "[Placeholder] Working hours and how to reach the firm outside them." },
+    ]}
+  />
+  <PlaceholderSection
+    dark
+    eyebrow="Before You Reach Out"
+    heading="What to expect."
+    intro="[Placeholder] Guidance on the consultation process and common questions."
+    blocks={[
+      { title: "The Consultation", note: "[Placeholder] What happens after you submit an inquiry, and typical response times." },
+      { title: "FAQ", note: "[Placeholder] Answers to the questions prospective clients ask most." },
+      { title: "Confidentiality", note: "[Placeholder] How the firm handles sensitive information and privacy." },
+    ]}
+  />
 </Layout>

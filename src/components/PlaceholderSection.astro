@@ -1,0 +1,33 @@
+---
+interface Block {
+  title: string;
+  note: string;
+}
+interface Props {
+  eyebrow: string;
+  heading: string;
+  intro?: string;
+  blocks: Block[];
+  dark?: boolean;
+}
+const { eyebrow, heading, intro, blocks, dark = false } = Astro.props;
+---
+<section class={`py-20 md:py-28 ${dark ? "bg-navy-900 text-white" : "bg-cream text-navy-900"}`}>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <p class={`text-sm tracking-[0.25em] uppercase mb-4 ${dark ? "text-gold-300" : "text-gold-600"}`}>{eyebrow}</p>
+    <h2 class={`text-3xl md:text-4xl font-serif leading-tight ${dark ? "text-white" : "text-navy-900"}`}>{heading}</h2>
+    <span class="gold-divider"></span>
+    {intro && (
+      <p class={`text-base md:text-lg leading-relaxed max-w-2xl mb-12 ${dark ? "text-white/70" : "text-navy-600"}`}>{intro}</p>
+    )}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {blocks.map((b) => (
+        <div class={`border p-6 lg:p-8 ${dark ? "border-white/10 bg-navy-950/40" : "border-navy-900/10 bg-white"}`}>
+          <div class="text-[10px] tracking-[0.25em] uppercase text-gold-500 mb-3">Placeholder</div>
+          <h3 class={`font-serif text-lg mb-2 ${dark ? "text-white" : "text-navy-900"}`}>{b.title}</h3>
+          <p class={`text-sm leading-relaxed ${dark ? "text-white/55" : "text-navy-600"}`}>{b.note}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,7 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PracticeAreas from "../components/PracticeAreas.astro";
+import PageHeader from "../components/PageHeader.astro";
+import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="Practice Areas — ALSA Law" description="A focused suite of legal services, each led by senior counsel with the depth and judgment your matter demands.">
+  <PageHeader
+    eyebrow="Practice Areas"
+    title="Where law meets leadership."
+    subtitle="A focused suite of services, each led by senior counsel with the depth and judgment your matter demands."
+    image="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1920&q=80"
+    position="object-center"
+  />
   <PracticeAreas />
+  <PlaceholderSection
+    eyebrow="In Depth"
+    heading="Beyond the overview."
+    intro="[Placeholder] Detailed breakdown of each practice area — scope of work, typical engagements, and the senior counsel who lead them."
+    blocks={[
+      { title: "Detailed Service Scope", note: "[Placeholder] A full description of what each practice area covers and who it serves." },
+      { title: "Representative Matters", note: "[Placeholder] Anonymised case studies and examples of work delivered." },
+      { title: "Sectors We Serve", note: "[Placeholder] Industries and client types the firm advises across." },
+    ]}
+  />
+  <PlaceholderSection
+    dark
+    eyebrow="Our Approach"
+    heading="How we handle a matter."
+    intro="[Placeholder] The firm's methodology — from first consultation through resolution."
+    blocks={[
+      { title: "Process", note: "[Placeholder] Step-by-step of how an engagement typically unfolds." },
+      { title: "Fees & Structure", note: "[Placeholder] How the firm approaches pricing and engagement terms." },
+      { title: "Why ALSA Law", note: "[Placeholder] What distinguishes the firm's handling of complex matters." },
+    ]}
+  />
 </Layout>

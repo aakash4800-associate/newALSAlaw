@@ -1,0 +1,41 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  subtitle?: string;
+  image: string;
+  position?: string;
+}
+const {
+  eyebrow,
+  title,
+  subtitle,
+  image,
+  position = "object-center",
+} = Astro.props;
+---
+<header class="relative overflow-hidden h-[60vh] min-h-[420px] flex items-end">
+  <!-- Background image -->
+  <img
+    src={image}
+    alt=""
+    aria-hidden="true"
+    class={`absolute inset-0 w-full h-full object-cover ${position}`}
+    loading="eager"
+  />
+  <!-- Warm dark overlay for legibility -->
+  <div class="absolute inset-0 bg-navy-950/70"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/30 to-navy-950/60"></div>
+  <!-- Subtle gold radial glow -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 55% 65% at 20% 80%, rgba(185,145,109,0.18) 0%, transparent 65%);"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-14 md:pb-20">
+    <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-4">{eyebrow}</p>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-[1.05]">{title}</h1>
+    <span class="gold-divider"></span>
+    {subtitle && (
+      <p class="text-white/70 text-lg leading-relaxed max-w-2xl">{subtitle}</p>
+    )}
+  </div>
+</header>
