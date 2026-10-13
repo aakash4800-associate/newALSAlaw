@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Attorneys from "../components/Attorneys.astro";
 import PageHeader from "../components/PageHeader.astro";
-import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="Who We Are — ALSA Law" description="Meet the senior counsel at ALSA Law — practitioners from the highest levels of the Bar and government.">
   <PageHeader
@@ -13,25 +12,39 @@ import PlaceholderSection from "../components/PlaceholderSection.astro";
     position="object-center"
   />
   <Attorneys hideHeader />
-  <PlaceholderSection
-    eyebrow="The Team"
-    heading="More than the names on the door."
-    intro="[Placeholder] Extended profiles of the wider team — associates, counsel, and the people who support every matter."
-    blocks={[
-      { title: "Full Attorney Bios", note: "[Placeholder] Long-form biographies, credentials, and notable matters for each attorney." },
-      { title: "Associates & Counsel", note: "[Placeholder] The wider legal team and their areas of focus." },
-      { title: "How We Work", note: "[Placeholder] The firm's approach to staffing, collaboration, and client service." },
-    ]}
-  />
-  <PlaceholderSection
-    dark
-    eyebrow="Join Us"
-    heading="Careers at ALSA Law."
-    intro="[Placeholder] Recruitment section — who the firm looks for and current opportunities."
-    blocks={[
-      { title: "Life at the Firm", note: "[Placeholder] Culture, development, and what it's like to practice here." },
-      { title: "Open Positions", note: "[Placeholder] Current vacancies and how to apply." },
-      { title: "Trainee & Pupillage", note: "[Placeholder] Early-career pathways into the firm." },
-    ]}
-  />
+
+  <!-- ░░ Our Approach — the boutique difference ░░ -->
+  <section class="py-20 md:py-28 bg-cream text-navy-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <p class="text-gold-600 text-sm tracking-[0.25em] uppercase mb-4">Our Approach</p>
+      <h2 class="text-3xl md:text-4xl font-serif leading-tight text-navy-900">The boutique difference.</h2>
+      <span class="gold-divider"></span>
+      <p class="text-navy-600 text-base md:text-lg leading-relaxed max-w-2xl mb-12">
+        We built ALSA Law to practise differently. Clients come to us for the judgment of senior counsel, given directly and without the layers of a larger firm.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="border border-navy-900/10 bg-white p-6 lg:p-8">
+          <div class="font-serif text-2xl text-gold-500 mb-3">01</div>
+          <h3 class="font-serif text-lg text-navy-900 mb-2">Senior counsel, personally</h3>
+          <p class="text-sm text-navy-600 leading-relaxed">
+            Every matter is led by a founding partner, from the first conversation to its resolution. The lawyer you meet is the lawyer who does the work — not a name on the door with the file handed down.
+          </p>
+        </div>
+        <div class="border border-navy-900/10 bg-white p-6 lg:p-8">
+          <div class="font-serif text-2xl text-gold-500 mb-3">02</div>
+          <h3 class="font-serif text-lg text-navy-900 mb-2">Deliberately focused</h3>
+          <p class="text-sm text-navy-600 leading-relaxed">
+            We take on a limited number of matters so each receives genuine senior attention. Where a matter falls outside our strengths, we say so — and point you to someone better placed rather than dabble.
+          </p>
+        </div>
+        <div class="border border-navy-900/10 bg-white p-6 lg:p-8">
+          <div class="font-serif text-2xl text-gold-500 mb-3">03</div>
+          <h3 class="font-serif text-lg text-navy-900 mb-2">Candid from the outset</h3>
+          <p class="text-sm text-navy-600 leading-relaxed">
+            Clients receive realistic, straight advice from the first meeting. We begin by understanding what you are actually trying to achieve, then set a strategy around it — judgment, not just hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
