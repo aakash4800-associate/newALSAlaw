@@ -8,4 +8,16 @@ image: "/attorneys/satinder-hunjan.jpg"
 tagline: "King's Counsel · Deputy High Court Judge · 40+ years at the English Bar · Ranked Band 1, Chambers & Partners"
 ---
 
-Satinder is King's Counsel and one of the leading silks in the UK and internationally, with a practice spanning catastrophic personal injury, clinical negligence, and complex commercial, product-liability and professional-negligence disputes. Called to the Bar in 1984, he has sat as a Deputy High Court Judge in the King's Bench Division and as a Recorder. Ranked Band 1 in Chambers & Partners and an accredited mediator and arbitrator, he was named Clinical Negligence Barrister of the Year (2015) and Sports Barrister of the Year (2016). His high-value caseload routinely involves novel and technically demanding issues across spinal and brain injury, amputation, and large-scale commercial loss. Outside practice, Satinder is a Patron of the Child Brain Injury Trust and works closely with Arts 4 Dementia.
+King's Counsel. Co-Founder. Chairman.
+
+There are titles that are given, and titles that are earned.
+
+Satinder Hunjan KC has spent decades earning his.
+
+One of the top performing King's Counsel with 40+ years at the English Bar, Satinder brings a standard of legal excellence to ALSA Law that is rare in any market and exceptional in ours.
+
+His appointment as King's Counsel places him among a select group of senior advocates recognized for their outstanding contribution to the law and the legal practice. It is not a credential that is granted easily.
+
+At ALSA Law, Satinder Hunjan KC serves as Co-Founder and Chairman, setting the strategic direction of the firm and bringing that international depth to every matter we take on.
+
+Local insights. Global expertise. Partner-led, always.

@@ -1,13 +1,20 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 interface Props {
   hideHeader?: boolean;
+  expandable?: boolean;
 }
-const { hideHeader = false } = Astro.props;
+const { hideHeader = false, expandable = false } = Astro.props;
 
-const attorneys = (await getCollection("attorneys")).sort(
+const attorneysRaw = (await getCollection("attorneys")).sort(
   (a, b) => a.data.order - b.data.order
+);
+const attorneys = await Promise.all(
+  attorneysRaw.map(async (a) => {
+    const { Content } = await render(a);
+    return { ...a, Content };
+  })
 );
 ---
 <section id="attorneys" class="py-24 md:py-32 bg-navy-900 text-white relative overflow-hidden">
@@ -35,21 +42,53 @@ const attorneys = (await getCollection("attorneys")).sort(
     <div class="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-2xl mx-auto">
       {attorneys.map((a) => (
         <article class="group relative bg-navy-800 border border-white/10 hover:border-gold-400 transition-colors">
-          <div class="aspect-[4/5] bg-gradient-to-br from-navy-700 to-navy-950 flex items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity"
-                 style="background-image: radial-gradient(circle at 50% 30%, var(--color-gold-400) 0, transparent 60%);">
+          {expandable ? (
+            <button
+              type="button"
+              class="attorney-trigger block w-full text-left cursor-pointer"
+              data-modal={`bio-modal-${a.data.order}`}
+              aria-label={`Read full profile of ${a.data.name}`}
+            >
+              <div class="aspect-[4/5] bg-gradient-to-br from-navy-700 to-navy-950 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity"
+                     style="background-image: radial-gradient(circle at 50% 30%, var(--color-gold-400) 0, transparent 60%);">
+                </div>
+                {a.data.image ? (
+                  <img
+                    src={a.data.image}
+                    alt={a.data.name}
+                    loading="lazy"
+                    class="relative w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <span class="relative font-serif text-7xl text-gold-300/90">{a.data.initials}</span>
+                )}
+                {/* Hover affordance */}
+                <div class="absolute inset-0 bg-navy-950/0 group-hover:bg-navy-950/45 transition-colors flex items-end justify-center pb-6">
+                  <span class="translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 inline-flex items-center gap-2 text-gold-200 text-[11px] tracking-[0.2em] uppercase border border-gold-300/60 px-4 py-2 bg-navy-950/40 backdrop-blur-sm">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z"/><path d="M8 12h8M12 8v8"/></svg>
+                    View full profile
+                  </span>
+                </div>
+              </div>
+            </button>
+          ) : (
+            <div class="aspect-[4/5] bg-gradient-to-br from-navy-700 to-navy-950 flex items-center justify-center relative overflow-hidden">
+              <div class="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity"
+                   style="background-image: radial-gradient(circle at 50% 30%, var(--color-gold-400) 0, transparent 60%);">
+              </div>
+              {a.data.image ? (
+                <img
+                  src={a.data.image}
+                  alt={a.data.name}
+                  loading="lazy"
+                  class="relative w-full h-full object-cover object-top"
+                />
+              ) : (
+                <span class="relative font-serif text-7xl text-gold-300/90">{a.data.initials}</span>
+              )}
             </div>
-            {a.data.image ? (
-              <img
-                src={a.data.image}
-                alt={a.data.name}
-                loading="lazy"
-                class="relative w-full h-full object-cover object-top"
-              />
-            ) : (
-              <span class="relative font-serif text-7xl text-gold-300/90">{a.data.initials}</span>
-            )}
-          </div>
+          )}
           <div class="p-6">
             <h3 class="font-serif text-xl text-white mb-1">{a.data.name}</h3>
             <div class="text-gold-300 text-sm mb-2">{a.data.title}</div>
@@ -57,9 +96,130 @@ const attorneys = (await getCollection("attorneys")).sort(
             {a.data.tagline && (
               <div class="mt-3 pt-3 border-t border-white/10 text-white/70 text-xs italic leading-snug">{a.data.tagline}</div>
             )}
+            {expandable && (
+              <button
+                type="button"
+                class="attorney-trigger mt-4 inline-flex items-center gap-2 text-gold-300 hover:text-white transition-colors text-xs tracking-[0.18em] uppercase border-b border-gold-400/50 hover:border-white pb-1"
+                data-modal={`bio-modal-${a.data.order}`}
+              >
+                Read full profile
+                <span aria-hidden="true">→</span>
+              </button>
+            )}
           </div>
         </article>
       ))}
     </div>
   </div>
+
+  {expandable && attorneys.map((a) => (
+    <div
+      id={`bio-modal-${a.data.order}`}
+      class="attorney-modal fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Profile of ${a.data.name}`}
+    >
+      <div class="modal-backdrop absolute inset-0 bg-navy-950/80 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+      <div class="modal-scene relative w-full max-w-3xl">
+        <div class="modal-card relative bg-navy-800 border border-gold-400/30 shadow-2xl shadow-navy-950/60 max-h-[88vh] overflow-y-auto">
+          <button
+            type="button"
+            class="modal-close absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center text-white/80 hover:text-white bg-navy-950/60 hover:bg-navy-950 border border-white/15 hover:border-gold-400 transition-colors"
+            aria-label="Close profile"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          </button>
+          <div class="grid sm:grid-cols-5">
+            <div class="sm:col-span-2 relative bg-gradient-to-br from-navy-700 to-navy-950 min-h-[260px] sm:min-h-full">
+              <div class="absolute inset-0 opacity-30"
+                   style="background-image: radial-gradient(circle at 50% 30%, var(--color-gold-400) 0, transparent 60%);">
+              </div>
+              {a.data.image ? (
+                <img src={a.data.image} alt={a.data.name} class="relative w-full h-full object-cover object-top" />
+              ) : (
+                <span class="absolute inset-0 flex items-center justify-center font-serif text-7xl text-gold-300/90">{a.data.initials}</span>
+              )}
+            </div>
+            <div class="sm:col-span-3 p-8 lg:p-10">
+              <p class="text-gold-300 text-[11px] tracking-[0.25em] uppercase mb-3">Profile</p>
+              <h3 class="font-serif text-3xl text-white leading-tight">{a.data.name}</h3>
+              <div class="text-gold-300 text-sm mt-1">{a.data.title}</div>
+              <div class="text-white/55 text-xs tracking-wider uppercase mt-2">{a.data.practice}</div>
+              <span class="gold-divider"></span>
+              <div class="text-white/75 text-sm leading-relaxed space-y-4 [&_p]:m-0 [&_p+p]:mt-4">
+                <a.Content />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
 </section>
+
+{expandable && (
+  <style>
+    .attorney-modal.is-open { display: flex; }
+    .attorney-modal.is-open .modal-backdrop { opacity: 1; }
+
+    .modal-scene { perspective: 1800px; }
+    .modal-card {
+      transform-origin: center center;
+      transform: rotateY(-90deg) scale(0.85);
+      opacity: 0;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.45s ease-out;
+    }
+    .attorney-modal.is-shown .modal-card {
+      transform: rotateY(0deg) scale(1);
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .modal-card { transition: opacity 0.25s ease-out; transform: none; }
+    }
+  </style>
+
+  <script is:inline>
+    (function () {
+      const openModal = (modal) => {
+        modal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+        // next frame: trigger entrance (backdrop + flip-in)
+        requestAnimationFrame(() => requestAnimationFrame(() => modal.classList.add("is-shown")));
+      };
+      const closeModal = (modal) => {
+        modal.classList.remove("is-shown");
+        document.body.style.overflow = "";
+        const card = modal.querySelector(".modal-card");
+        const done = () => { modal.classList.remove("is-open"); card && card.removeEventListener("transitionend", done); };
+        if (card) card.addEventListener("transitionend", done);
+        else modal.classList.remove("is-open");
+        // fallback in case transitionend doesn't fire
+        setTimeout(() => modal.classList.remove("is-open"), 700);
+      };
+
+      document.querySelectorAll(".attorney-trigger").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-modal");
+          const modal = id && document.getElementById(id);
+          if (modal) openModal(modal);
+        });
+      });
+
+      document.querySelectorAll(".attorney-modal").forEach((modal) => {
+        const backdrop = modal.querySelector(".modal-backdrop");
+        const closeBtn = modal.querySelector(".modal-close");
+        backdrop && backdrop.addEventListener("click", () => closeModal(modal));
+        closeBtn && closeBtn.addEventListener("click", () => closeModal(modal));
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          const open = document.querySelector(".attorney-modal.is-open");
+          if (open) closeModal(open);
+        }
+      });
+    })();
+  </script>
+)}
