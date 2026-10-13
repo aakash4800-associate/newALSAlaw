@@ -5,6 +5,7 @@ practice: "Commercial Litigation · Wealth Management & Structuring · Dispute R
 initials: "AA"
 order: 2
 image: "/attorneys/abdulla-aljefri-removebg-preview.png"
+modalImageClass: "object-contain object-center"
 tagline: "Leading expert on Abu Dhabi government affairs and wealth management & structuring · 17 years in the Abu Dhabi Government"
 ---
 
