@@ -136,7 +136,7 @@ const attorneys = await Promise.all(
                    style="background-image: radial-gradient(circle at 50% 30%, var(--color-gold-400) 0, transparent 60%);">
               </div>
               {a.data.image ? (
-                <img src={a.data.image} alt={a.data.name} class="relative w-full h-full object-cover object-top" />
+                <img src={a.data.image} alt={a.data.name} class={`relative w-full h-full ${a.data.modalImageClass ?? "object-cover object-top"}`} />
               ) : (
                 <span class="absolute inset-0 flex items-center justify-center font-serif text-7xl text-gold-300/90">{a.data.initials}</span>
               )}

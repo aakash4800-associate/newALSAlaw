@@ -5,6 +5,7 @@ practice: "High-Value Claims · Commercial Litigation · Arbitration · Dispute 
 initials: "SH"
 order: 1
 image: "/attorneys/satinder-hunjan.jpg"
+modalImageClass: "object-contain object-center"
 tagline: "King's Counsel · Deputy High Court Judge · 40+ years at the English Bar · Ranked Band 1, Chambers & Partners"
 ---
 

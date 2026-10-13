@@ -21,6 +21,7 @@ const attorneys = defineCollection({
     order: z.number(),
     image: z.string().optional(),
     tagline: z.string().optional(),
+    modalImageClass: z.string().optional(),
   }),
 });
 
