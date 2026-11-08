@@ -1,11 +1,15 @@
 ---
 interface Props {
   hideHeader?: boolean;
-  tone?: "white" | "cream";
+  tone?: "white" | "cream" | "glass";
 }
 const { hideHeader = false, tone = "white" } = Astro.props;
+const onDark = tone === "glass";
+const sectionBg = tone === "glass" ? "bg-transparent" : tone === "cream" ? "bg-cream" : "bg-white";
+const statTitle = onDark ? "text-white" : "text-navy-900";
+const statSub = onDark ? "text-white/70" : "text-navy-600";
 ---
-<section id="about" class:list={["py-24 md:py-32", tone === "cream" ? "bg-cream" : "bg-white"]}>
+<section id="about" class:list={["py-24 md:py-32", sectionBg]}>
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
     <!-- ░░ Left panel: Abu Dhabi skyline photo with warm gold duotone ░░ -->
@@ -62,16 +66,16 @@ const { hideHeader = false, tone = "white" } = Astro.props;
       )}
       <div class="grid grid-cols-2 gap-6 max-w-lg">
         <div class="border-l-2 border-gold-400 pl-4">
-          <div class="font-serif text-2xl text-navy-900">60+ Years</div>
-          <div class="text-sm text-navy-600 mt-1">Combined Experience</div>
+          <div class={`font-serif text-2xl ${statTitle}`}>60+ Years</div>
+          <div class={`text-sm mt-1 ${statSub}`}>Combined Experience</div>
         </div>
         <div class="border-l-2 border-gold-400 pl-4">
-          <div class="font-serif text-2xl text-navy-900">40+</div>
-          <div class="text-sm text-navy-600 mt-1">Government &amp; Institutional Entities Advised</div>
+          <div class={`font-serif text-2xl ${statTitle}`}>40+</div>
+          <div class={`text-sm mt-1 ${statSub}`}>Government &amp; Institutional Entities Advised</div>
         </div>
         <div class="border-l-2 border-gold-400 pl-4">
-          <div class="font-serif text-2xl text-navy-900">Abu Dhabi · London</div>
-          <div class="text-sm text-navy-600 mt-1">Our Presence</div>
+          <div class={`font-serif text-2xl ${statTitle}`}>Abu Dhabi · London</div>
+          <div class={`text-sm mt-1 ${statSub}`}>Our Presence</div>
         </div>
       </div>
 

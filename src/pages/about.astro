@@ -1,36 +1,42 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
-import PageHeader from "../components/PageHeader.astro";
 import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="About the Firm — ALSA Law" description="A senior-counsel boutique with a presence in Abu Dhabi and London, founded by practitioners from the highest levels of the Bar and government.">
-  <PageHeader
-    eyebrow="About the Firm"
-    title="Senior attention. Without exception."
-    subtitle="A senior-counsel boutique with a presence in Abu Dhabi and London, built on decades of practice at the highest levels of the Bar and government."
-    image="/abu-dhabi.jpg"
-    position="object-center"
-  />
-  <About hideHeader tone="cream" />
-  <PlaceholderSection
-    eyebrow="Our Story"
-    heading="How the firm came to be."
-    intro="[Placeholder] Full narrative history of ALSA Law — founding vision, the partners who started it, and the milestones that shaped the practice."
-    blocks={[
-      { title: "Founding & Vision", note: "[Placeholder] The story behind the firm's founding and the philosophy that drives it." },
-      { title: "Milestones", note: "[Placeholder] A timeline of key moments, landmark matters, and growth across Abu Dhabi and London." },
-      { title: "Our Values", note: "[Placeholder] The principles that define how the firm works with clients and one another." },
-    ]}
-  />
-  <PlaceholderSection
-    eyebrow="Our Offices"
-    heading="Abu Dhabi & London."
-    intro="[Placeholder] Deeper detail on each office — presence, capabilities, and the regions served."
-    blocks={[
-      { title: "Abu Dhabi", note: "[Placeholder] Office overview, address, and the practice strengths based here." },
-      { title: "London", note: "[Placeholder] Office overview and the cross-border work coordinated from the UK." },
-      { title: "Global Reach", note: "[Placeholder] How the firm serves clients across jurisdictions." },
-    ]}
-  />
+  <!-- ░░ Fixed Abu Dhabi skyline backdrop — content scrolls over it ░░ -->
+  <div class="fixed inset-0" style="z-index: -10;" aria-hidden="true">
+    <img src="/abu-dhabi.jpg" alt="" class="w-full h-full object-cover object-center" />
+    <!-- Dark wash for cohesion + legibility -->
+    <div class="absolute inset-0 bg-navy-950/85"></div>
+    <!-- Subtle warm glow -->
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 70% at 20% 30%, rgba(185,145,109,0.10) 0%, transparent 65%);"></div>
+  </div>
+
+  <!-- Content sits over the fixed backdrop; sections are transparent -->
+  <div class="relative text-white pt-28 md:pt-32">
+    <About hideHeader tone="glass" />
+    <PlaceholderSection
+      glass
+      eyebrow="Our Story"
+      heading="How the firm came to be."
+      intro="[Placeholder] Full narrative history of ALSA Law — founding vision, the partners who started it, and the milestones that shaped the practice."
+      blocks={[
+        { title: "Founding & Vision", note: "[Placeholder] The story behind the firm's founding and the philosophy that drives it." },
+        { title: "Milestones", note: "[Placeholder] A timeline of key moments, landmark matters, and growth across Abu Dhabi and London." },
+        { title: "Our Values", note: "[Placeholder] The principles that define how the firm works with clients and one another." },
+      ]}
+    />
+    <PlaceholderSection
+      glass
+      eyebrow="Our Offices"
+      heading="Abu Dhabi & London."
+      intro="[Placeholder] Deeper detail on each office — presence, capabilities, and the regions served."
+      blocks={[
+        { title: "Abu Dhabi", note: "[Placeholder] Office overview, address, and the practice strengths based here." },
+        { title: "London", note: "[Placeholder] Office overview and the cross-border work coordinated from the UK." },
+        { title: "Global Reach", note: "[Placeholder] How the firm serves clients across jurisdictions." },
+      ]}
+    />
+  </div>
 </Layout>
