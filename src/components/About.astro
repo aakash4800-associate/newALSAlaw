@@ -1,10 +1,11 @@
 ---
 interface Props {
   hideHeader?: boolean;
+  tone?: "white" | "cream";
 }
-const { hideHeader = false } = Astro.props;
+const { hideHeader = false, tone = "white" } = Astro.props;
 ---
-<section id="about" class="py-24 md:py-32 bg-white">
+<section id="about" class:list={["py-24 md:py-32", tone === "cream" ? "bg-cream" : "bg-white"]}>
   <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
 
     <!-- ░░ Left panel: Abu Dhabi skyline photo with warm gold duotone ░░ -->
