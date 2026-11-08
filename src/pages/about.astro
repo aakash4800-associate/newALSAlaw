@@ -15,7 +15,13 @@ import PlaceholderSection from "../components/PlaceholderSection.astro";
 
   <!-- Content sits over the fixed backdrop; sections are transparent -->
   <div class="relative text-white pt-28 md:pt-32">
-    <About hideHeader tone="glass" showPhoto={false} />
+    <About
+      hideHeader
+      tone="glass"
+      image="/about-feature.jpg"
+      imageAlt="ALSA Law office — Abu Dhabi"
+      imagePosition="object-center"
+    />
     <PlaceholderSection
       glass
       eyebrow="Our Story"

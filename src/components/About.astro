@@ -3,8 +3,18 @@ interface Props {
   hideHeader?: boolean;
   tone?: "white" | "cream" | "glass";
   showPhoto?: boolean;
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
 }
-const { hideHeader = false, tone = "white", showPhoto = true } = Astro.props;
+const {
+  hideHeader = false,
+  tone = "white",
+  showPhoto = true,
+  image = "/abu-dhabi.jpg",
+  imageAlt = "Abu Dhabi skyline",
+  imagePosition = "object-left",
+} = Astro.props;
 const onDark = tone === "glass";
 const sectionBg = tone === "glass" ? "bg-transparent" : tone === "cream" ? "bg-cream" : "bg-white";
 const statTitle = onDark ? "text-white" : "text-navy-900";
@@ -22,11 +32,11 @@ const statSub = onDark ? "text-white/70" : "text-navy-600";
 
         {showPhoto ? (
           <div class="relative overflow-hidden" style="aspect-ratio: 4/5;">
-            <!-- Photo: Abu Dhabi / UAE corporate skyline -->
+            <!-- Feature photo -->
             <img
-              src="/abu-dhabi.jpg"
-              alt="Abu Dhabi skyline"
-              class="w-full h-full object-cover object-left"
+              src={image}
+              alt={imageAlt}
+              class:list={["w-full h-full object-cover", imagePosition]}
               loading="lazy"
             />
             <!-- Light overlay — same treatment as the London banner -->
