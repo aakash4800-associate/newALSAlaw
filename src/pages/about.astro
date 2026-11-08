@@ -22,17 +22,40 @@ import PlaceholderSection from "../components/PlaceholderSection.astro";
       imageAlt="ALSA Law office — Abu Dhabi"
       imagePosition="object-center"
     />
-    <PlaceholderSection
-      glass
-      eyebrow="Our Story"
-      heading="How the firm came to be."
-      intro="[Placeholder] Full narrative history of ALSA Law — founding vision, the partners who started it, and the milestones that shaped the practice."
-      blocks={[
-        { title: "Founding & Vision", note: "[Placeholder] The story behind the firm's founding and the philosophy that drives it." },
-        { title: "Milestones", note: "[Placeholder] A timeline of key moments, landmark matters, and growth across Abu Dhabi and London." },
-        { title: "Our Values", note: "[Placeholder] The principles that define how the firm works with clients and one another." },
-      ]}
-    />
+    <!-- ░░ Our Story — the gap ALSA was built to bridge ░░ -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-4">Our Story</p>
+        <h2 class="text-3xl md:text-4xl font-serif leading-tight text-white">Built to bridge two legal worlds.</h2>
+        <span class="gold-divider"></span>
+        <p class="text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mb-12">
+          ALSA Law was founded to close a gap that had long defined legal practice in the UAE. On one side stood local firms with deep command of civil law, Arabic, and the Emirati courts, yet limited exposure to common law and international practice. On the other stood international firms fluent in common law but without genuine civil-law expertise, or the ability to operate in Arabic before the ADJD, the Dubai courts, and local authorities. Clients were asked to choose. We built a firm that refuses to make them choose.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">01</div>
+            <h3 class="font-serif text-lg text-white mb-2">A market divided</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              Local counsel knew the Emirati system intimately but rarely carried common-law depth. International firms brought global practice but could not operate in Arabic or navigate the local courts. Neither side offered the whole.
+            </p>
+          </div>
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">02</div>
+            <h3 class="font-serif text-lg text-white mb-2">Two systems, one firm</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              ALSA Law unites genuine common-law and international expertise with an authoritative command of UAE civil law. One firm, fluent in both traditions, advising seamlessly across them.
+            </p>
+          </div>
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">03</div>
+            <h3 class="font-serif text-lg text-white mb-2">Local command, global standard</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              Our bench pairs international-caliber lawyers with a Managing Partner who served as a government attorney within the Emirati system. Few are better placed to advise on local law and the courts that apply it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     <PlaceholderSection
       glass
       eyebrow="Our Offices"
