@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PracticeAreas from "../components/PracticeAreas.astro";
-import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="Practice Areas — ALSA Law" description="A focused suite of legal services, each led by senior counsel with the depth and judgment your matter demands.">
   <!-- ░░ Fixed London backdrop — content scrolls over it ░░ -->
@@ -18,16 +17,46 @@ import PlaceholderSection from "../components/PlaceholderSection.astro";
   <!-- Content sits over the fixed backdrop; sections are transparent -->
   <div class="relative text-white pt-20 md:pt-24">
     <PracticeAreas glass expandable />
-    <PlaceholderSection
-      glass
-      eyebrow="Our Approach"
-      heading="How we handle a matter."
-      intro="[Placeholder] The firm's methodology — from first consultation through resolution."
-      blocks={[
-        { title: "Process", note: "[Placeholder] Step-by-step of how an engagement typically unfolds." },
-        { title: "Fees & Structure", note: "[Placeholder] How the firm approaches pricing and engagement terms." },
-        { title: "Why ALSA Law", note: "[Placeholder] What distinguishes the firm's handling of complex matters." },
-      ]}
-    />
+    <!-- ░░ Our Approach — how we handle a matter ░░ -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-4">Our Approach</p>
+        <h2 class="text-3xl md:text-4xl font-serif leading-tight text-white">How we handle a matter.</h2>
+        <span class="gold-divider"></span>
+        <p class="text-white/70 text-base md:text-lg leading-relaxed max-w-2xl mb-12">
+          Every engagement follows the same discipline, whatever the matter. From the first conversation to its resolution, you deal with senior counsel and you always know where you stand.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">01</div>
+            <h3 class="font-serif text-lg text-white mb-2">The first conversation</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              We begin by understanding what you are actually trying to achieve. You receive a candid, confidential read on your position and your options before any engagement is agreed.
+            </p>
+          </div>
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">02</div>
+            <h3 class="font-serif text-lg text-white mb-2">Strategy and scope</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              We set a clear plan, a defined scope, and name the senior lawyer who will own your matter. No ambiguity about what we are doing or who is doing it.
+            </p>
+          </div>
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">03</div>
+            <h3 class="font-serif text-lg text-white mb-2">Senior-led execution</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              The partner you met leads the matter. You are kept informed as it develops, with proactive communication and no surprises along the way.
+            </p>
+          </div>
+          <div class="border border-white/10 bg-navy-950/40 backdrop-blur-sm p-6 lg:p-8">
+            <div class="font-serif text-2xl text-gold-400 mb-3">04</div>
+            <h3 class="font-serif text-lg text-white mb-2">Resolution, and beyond</h3>
+            <p class="text-sm text-white/60 leading-relaxed">
+              We see the matter through to its conclusion, and remain available for what comes next. The best measure of our work is the client who returns.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>
