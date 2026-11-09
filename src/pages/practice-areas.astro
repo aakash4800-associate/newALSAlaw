@@ -7,8 +7,10 @@ import PlaceholderSection from "../components/PlaceholderSection.astro";
   <!-- ░░ Fixed London backdrop — content scrolls over it ░░ -->
   <div class="fixed inset-0" style="z-index: -10;" aria-hidden="true">
     <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1920&q=80" alt="" class="w-full h-full object-cover object-center" />
-    <!-- Dark wash for cohesion + legibility -->
-    <div class="absolute inset-0 bg-navy-950/65"></div>
+    <!-- Lighter wash so the London skyline shows through -->
+    <div class="absolute inset-0 bg-navy-950/40"></div>
+    <!-- Gradient keeps the top (nav + heading) legible -->
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-transparent to-navy-950/25"></div>
     <!-- Subtle warm glow -->
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 70% at 20% 30%, rgba(185,145,109,0.10) 0%, transparent 65%);"></div>
   </div>
