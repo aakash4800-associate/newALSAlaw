@@ -1,7 +1,7 @@
 ---
 title: "Notary Services"
 icon: "seal"
-summary: "Reliable notary services for corporate, commercial, and personal documentation — handled with care, accuracy, and discretion."
+summary: "Reliable notary services for corporate, commercial, and personal documentation, handled with care, accuracy, and discretion."
 order: 7
 ---
 

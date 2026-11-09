@@ -1,7 +1,7 @@
 ---
 title: "Dispute Resolution & Arbitration"
 icon: "gavel"
-summary: "High-stakes commercial and contractual disputes — local and international — across UAE mainland courts, Free Zones, and global arbitration."
+summary: "High-stakes commercial and contractual disputes, local and international, across UAE mainland courts, Free Zones, and global arbitration."
 order: 2
 ---
 

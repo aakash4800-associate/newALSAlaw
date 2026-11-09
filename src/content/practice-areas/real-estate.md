@@ -1,7 +1,7 @@
 ---
 title: "Real Estate & Investment Structuring"
 icon: "building"
-summary: "Structuring acquisitions, disposals, and investments — with developer advisory grounded in a strong connection to Abu Dhabi's real estate ecosystem."
+summary: "Structuring acquisitions, disposals, and investments, with developer advisory grounded in a strong connection to Abu Dhabi's real estate ecosystem."
 order: 5
 ---
 
