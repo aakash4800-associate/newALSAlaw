@@ -7,8 +7,8 @@
     <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950"></div>
 
     <!-- Drifting bronze glows -->
-    <div class="orb orb-1 absolute top-1/4 right-[15%] w-[55vmin] h-[55vmin] rounded-full bg-gold-400/10 blur-3xl"></div>
-    <div class="orb orb-2 absolute bottom-1/4 left-[10%] w-[45vmin] h-[45vmin] rounded-full bg-gold-500/10 blur-3xl"></div>
+    <div data-orb class="orb orb-1 absolute top-1/4 right-[15%] w-[55vmin] h-[55vmin] rounded-full bg-gold-400/10 blur-3xl"></div>
+    <div data-orb class="orb orb-2 absolute bottom-1/4 left-[10%] w-[45vmin] h-[45vmin] rounded-full bg-gold-500/10 blur-3xl"></div>
 
     <!-- Decorative bronze arc, echoes the brand deck -->
     <svg class="hidden arc absolute top-0 right-0 w-[70vmin] h-[70vmin] opacity-40 pointer-events-none" viewBox="0 0 200 200" fill="none" preserveAspectRatio="xMaxYMin meet">
@@ -45,7 +45,7 @@
   </div>
 
   <!-- Centered brand stack -->
-  <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+  <div id="landing-stack" class="relative z-10 text-center px-6 max-w-3xl mx-auto" style="will-change: transform, opacity;">
     <!-- Logo with glow + breathing -->
     <div class="logo-wrap relative inline-block">
       <span class="logo-halo absolute inset-0 rounded-full bg-gold-400/25 blur-3xl" aria-hidden="true"></span>
@@ -72,10 +72,12 @@
     </p>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="scroll-cue absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/45 text-[10px] tracking-[0.4em] uppercase">
-    <span>Scroll</span>
-    <span class="scroll-line block w-px h-10 bg-gradient-to-b from-gold-400/70 to-transparent origin-top"></span>
+  <!-- Scroll indicator (wrapper fades on scroll; inner keeps its entrance animation) -->
+  <div id="landing-cue">
+    <div class="scroll-cue absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/45 text-[10px] tracking-[0.4em] uppercase">
+      <span>Scroll</span>
+      <span class="scroll-line block w-px h-10 bg-gradient-to-b from-gold-400/70 to-transparent origin-top"></span>
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,6 @@
 ---
 ---
-<section class="relative min-h-[92vh] flex items-center overflow-hidden bg-navy-900 text-white">
+<section id="hero" class="relative min-h-[92vh] flex items-center overflow-hidden bg-navy-900 text-white">
   <!-- Layered background -->
   <div class="absolute inset-0">
     <div class="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-800 to-navy-900"></div>
@@ -18,17 +18,17 @@
   </div>
 
   <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-center pt-32 pb-24">
-    <div class="lg:col-span-7 fade-in">
-      <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-6">Abu Dhabi · London</p>
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.05] text-white">
+    <div id="hero-text" class="lg:col-span-7" style="will-change: transform;">
+      <p data-reveal style="--reveal-delay: 0ms;" class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-6">Abu Dhabi · London</p>
+      <h1 data-reveal style="--reveal-delay: 120ms;" class="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.05] text-white">
         Advice built<br />on <span class="italic text-gold-300">clarity.</span><br />
         Strategies built<br class="md:hidden" /> to <span class="italic text-gold-300">last.</span>
       </h1>
-      <span class="gold-divider"></span>
-      <p class="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
+      <span data-reveal-line style="--reveal-delay: 320ms;" class="gold-divider"></span>
+      <p data-reveal style="--reveal-delay: 420ms;" class="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
         ALSA Law brings together senior counsel with decades of practice at the highest levels of the Bar to guide executives, families, and institutions through their most consequential legal matters with the discretion, judgment, and senior attention every client deserves.
       </p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <div data-reveal style="--reveal-delay: 560ms;" class="mt-10 flex flex-col sm:flex-row gap-4">
         <a href="/contact" class="inline-flex items-center justify-center gap-2 px-7 py-4 bg-gold-400 text-navy-900 font-medium hover:bg-gold-300 transition-colors">
           Request a Consultation
           <span aria-hidden="true">→</span>
@@ -40,22 +40,24 @@
     </div>
 
     <!-- ░░ Right panel: corporate glass-tower photo ░░ -->
-    <div class="lg:col-span-5 hidden lg:block">
+    <div data-reveal style="--reveal-delay: 200ms;" class="lg:col-span-5 hidden lg:block">
       <div class="relative">
         <!-- corner accents -->
         <div class="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold-400/40 z-10 pointer-events-none"></div>
         <div class="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-gold-400/40 z-10 pointer-events-none"></div>
 
         <div class="relative aspect-[4/5] overflow-hidden border border-gold-400/20">
-          <!-- Photo: looking up at glass corporate towers -->
+          <!-- Photo: zooms out gently as the section scrolls into view -->
           <img
+            id="hero-media"
             src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2FAbuDhabi-AlSilaTower-CityView_FeatureSurrounding.jpg&w=3840&q=75"
             alt=""
             aria-hidden="true"
-            class="w-full h-full object-cover scale-105"
+            class="w-full h-full object-cover"
+            style="will-change: transform; transform-origin: center center;"
             loading="eager"
           />
-          <!-- Light overlay — same treatment as Etihad Towers and London photos -->
+          <!-- Light overlay -->
           <div class="absolute inset-0 bg-navy-950/45"></div>
           <!-- Thin gold diagonal accent line -->
           <svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
