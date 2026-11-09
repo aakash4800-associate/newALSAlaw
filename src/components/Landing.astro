@@ -49,13 +49,28 @@
     <!-- Logo with glow + breathing -->
     <div class="logo-wrap relative inline-block">
       <span class="logo-halo absolute inset-0 rounded-full bg-gold-400/25 blur-3xl" aria-hidden="true"></span>
-      <img
-        src="/logo-mark.png"
-        alt="ALSA Law"
-        width="480"
-        height="480"
-        class="logo-mark relative w-32 md:w-40 lg:w-48 mx-auto select-none"
-      />
+      <!-- Logo built from two aligned layers (upright A + inverted A) so they can part on scroll -->
+      <div class="logo-mark relative w-32 md:w-40 lg:w-48 mx-auto select-none">
+        <img
+          id="logo-a"
+          src="/logo-mark-a.png"
+          alt="ALSA Law"
+          width="482"
+          height="482"
+          class="relative block w-full h-auto"
+          style="will-change: transform;"
+        />
+        <img
+          id="logo-v"
+          src="/logo-mark-v.png"
+          alt=""
+          aria-hidden="true"
+          width="482"
+          height="482"
+          class="absolute inset-0 block w-full h-full"
+          style="will-change: transform;"
+        />
+      </div>
     </div>
 
     <!-- Wordmark -->
