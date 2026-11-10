@@ -10,9 +10,11 @@ import PlaceholderSection from "../components/PlaceholderSection.astro";
       src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1920&q=80"
       alt=""
       class="w-full h-full object-cover object-center"
+      style="filter: brightness(1.15) saturate(1.1);"
     />
-    <!-- Same warm dark treatment the contact section used -->
-    <div class="absolute inset-0 bg-navy-950/78"></div>
+    <!-- Lighter wash so the room comes through; gradient keeps the top (nav + heading) readable -->
+    <div class="absolute inset-0 bg-navy-950/50"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950/60 via-transparent to-navy-950/40"></div>
     <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 70% at 15% 60%, rgba(185,145,109,0.12) 0%, transparent 65%);"></div>
   </div>
 
