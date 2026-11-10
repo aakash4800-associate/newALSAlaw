@@ -1,37 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Contact from "../components/Contact.astro";
-import PageHeader from "../components/PageHeader.astro";
 import PlaceholderSection from "../components/PlaceholderSection.astro";
 ---
 <Layout title="Contact — ALSA Law" description="Schedule a consultation with ALSA Law. Senior counsel available in Abu Dhabi and London.">
-  <PageHeader
-    eyebrow="Schedule a Consultation"
-    title="Let's start a conversation."
-    subtitle="Tell us briefly about your matter. A member of our team will respond within one business day."
-    image="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80"
-    position="object-center"
-  />
-  <Contact hideHeader />
-  <PlaceholderSection
-    eyebrow="Visit Us"
-    heading="Find our offices."
-    intro="[Placeholder] Location detail, maps, and directions for each office."
-    blocks={[
-      { title: "Abu Dhabi Office", note: "[Placeholder] Map, address, parking, and building access details." },
-      { title: "London Office", note: "[Placeholder] Map, address, and nearest transport links." },
-      { title: "Office Hours", note: "[Placeholder] Working hours and how to reach the firm outside them." },
-    ]}
-  />
-  <PlaceholderSection
-    dark
-    eyebrow="Before You Reach Out"
-    heading="What to expect."
-    intro="[Placeholder] Guidance on the consultation process and common questions."
-    blocks={[
-      { title: "The Consultation", note: "[Placeholder] What happens after you submit an inquiry, and typical response times." },
-      { title: "FAQ", note: "[Placeholder] Answers to the questions prospective clients ask most." },
-      { title: "Confidentiality", note: "[Placeholder] How the firm handles sensitive information and privacy." },
-    ]}
-  />
+  <!-- ░░ Fixed office backdrop: dark wood-panelled conference room; content scrolls over it ░░ -->
+  <div class="fixed inset-0" style="z-index: -10;" aria-hidden="true">
+    <img
+      src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1920&q=80"
+      alt=""
+      class="w-full h-full object-cover object-center"
+    />
+    <!-- Same warm dark treatment the contact section used -->
+    <div class="absolute inset-0 bg-navy-950/78"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 70% at 15% 60%, rgba(185,145,109,0.12) 0%, transparent 65%);"></div>
+  </div>
+
+  <!-- Content sits over the fixed backdrop; sections are transparent -->
+  <div class="relative text-white pt-12 md:pt-16">
+    <Contact pageBackground />
+    <PlaceholderSection
+      glass
+      eyebrow="Visit Us"
+      heading="Find our offices."
+      intro="[Placeholder] Location detail, maps, and directions for each office."
+      blocks={[
+        { title: "Abu Dhabi Office", note: "[Placeholder] Map, address, parking, and building access details." },
+        { title: "London Office", note: "[Placeholder] Map, address, and nearest transport links." },
+        { title: "Office Hours", note: "[Placeholder] Working hours and how to reach the firm outside them." },
+      ]}
+    />
+    <PlaceholderSection
+      glass
+      eyebrow="Before You Reach Out"
+      heading="What to expect."
+      intro="[Placeholder] Guidance on the consultation process and common questions."
+      blocks={[
+        { title: "The Consultation", note: "[Placeholder] What happens after you submit an inquiry, and typical response times." },
+        { title: "FAQ", note: "[Placeholder] Answers to the questions prospective clients ask most." },
+        { title: "Confidentiality", note: "[Placeholder] How the firm handles sensitive information and privacy." },
+      ]}
+    />
+  </div>
 </Layout>

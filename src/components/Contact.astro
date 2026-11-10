@@ -1,13 +1,15 @@
 ---
 interface Props {
   hideHeader?: boolean;
+  /** When the page supplies its own fixed full-page background, skip this section's background */
+  pageBackground?: boolean;
 }
-const { hideHeader = false } = Astro.props;
+const { hideHeader = false, pageBackground = false } = Astro.props;
 ---
 <section id="contact" class="relative overflow-hidden text-white">
 
   <!-- ░░ Background: dark wood-panelled conference room ░░ -->
-  <div class="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+  <div class:list={["absolute inset-0 pointer-events-none select-none", { hidden: pageBackground }]} aria-hidden="true">
     <img
       src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1920&q=80"
       alt=""
